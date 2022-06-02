@@ -1,12 +1,10 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { ClothingProps } from './types'
 import { Noop } from '../../utils/Noop'
 import { Path, Polygon, G } from 'react-native-svg'
 
 export const TankTop = ({ color, graphic: Graphic = Noop }: ClothingProps) => {
-  const { colors } = useTheme()
-
   const { base, shadow } = colors.clothing[color]
 
   return (

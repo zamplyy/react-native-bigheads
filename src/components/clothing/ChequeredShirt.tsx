@@ -1,11 +1,9 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { ClothingProps } from './types'
 import { G, Path } from 'react-native-svg'
 
 export const Front = ({ color, hasBreasts }: ClothingProps) => {
-  const { colors } = useTheme()
-
   const { base } = colors.clothing[color]
 
   if (!hasBreasts) {
@@ -97,8 +95,8 @@ export const Front = ({ color, hasBreasts }: ClothingProps) => {
   )
 }
 
-export const Back = ({ color }: ClothingProps) => {
-  const { colors, skin } = useTheme()
+export const Back = ({ color, skinTone }: ClothingProps) => {
+  const skin = colors.skin[skinTone || 'light']
 
   const { base } = colors.clothing[color]
 

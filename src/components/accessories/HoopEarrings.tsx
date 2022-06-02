@@ -1,10 +1,8 @@
 import React from 'react'
 import { G, Path } from 'react-native-svg'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 
 export const HoopEarrings = () => {
-  const { colors } = useTheme()
-
   return (
     <G>
       <Path

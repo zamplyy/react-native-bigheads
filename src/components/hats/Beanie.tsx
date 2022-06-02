@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { ClothingProps } from '../clothing/types'
 import { HatProps } from './types'
 import { Path, G, Circle } from 'react-native-svg'
@@ -11,8 +11,6 @@ import { Path, G, Circle } from 'react-native-svg'
 
 // export const Front = ({ color, scale = 1 }: ClothingProps & HatProps) => {
 export const Front = ({ color }: ClothingProps & HatProps) => {
-  const { colors } = useTheme()
-
   const { base, shadow } = colors.clothing[color]
 
   return (
@@ -191,8 +189,6 @@ export const Front = ({ color }: ClothingProps & HatProps) => {
 
 // export const Back = ({ scale = 1 }: HatProps) => {
 export const Back = () => {
-  const { colors } = useTheme()
-
   return (
     <G transform={{ scale: 1, origin: 'center' }}>
       <Path

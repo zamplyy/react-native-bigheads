@@ -1,3 +1,1 @@
-import React from 'react'
-
-export const Noop = () => <></>
+export const Noop = () => null

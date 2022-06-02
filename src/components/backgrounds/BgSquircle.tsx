@@ -1,11 +1,9 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Path } from 'react-native-svg'
 import { BgShapeProps } from './types'
 
 export const BgSquircle = ({ bgColor }: BgShapeProps) => {
-  const { colors } = useTheme()
-
   const color = colors.bgColors[bgColor]
 
   return (

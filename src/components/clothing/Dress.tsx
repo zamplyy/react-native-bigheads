@@ -1,12 +1,11 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { ClothingProps } from './types'
 import { Path } from 'react-native-svg'
 import { Polygon } from 'react-native-svg'
 
-export const Front = ({ color }: ClothingProps) => {
-  const { colors, skin } = useTheme()
-
+export const Front = ({ color, skinTone }: ClothingProps) => {
+  const skin = colors.skin[skinTone || 'light']
   const { base } = colors.clothing[color]
 
   return (
@@ -35,8 +34,6 @@ export const Front = ({ color }: ClothingProps) => {
 }
 
 export const Back = ({ color }: ClothingProps) => {
-  const { colors } = useTheme()
-
   const { base, shadow } = colors.clothing[color]
 
   return (

@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Path } from 'react-native-svg'
 
 export const Tongue = () => {
-  const { colors } = useTheme()
-
   return (
     <>
       <Path d="M443.14,621.86c0-18.9,113.72-16.06,113.72,0a56.86,56.86,0,0,1-113.72,0Z" fill={colors.outline} />

@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Path, G } from 'react-native-svg'
 
 export const VomitingRainbow = () => {
-  const { colors } = useTheme()
-
   return (
     <G>
       <Path

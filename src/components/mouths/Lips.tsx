@@ -1,11 +1,9 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { MouthProps } from './types'
 import { Path } from 'react-native-svg'
 
 export const Lips = ({ lipColor }: MouthProps) => {
-  const { colors } = useTheme()
-
   const { base, shadow } = colors.lipColors[lipColor || 'red']
 
   return (

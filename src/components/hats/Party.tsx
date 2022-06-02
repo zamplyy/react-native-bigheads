@@ -1,11 +1,9 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Noop } from '../../utils/Noop'
 import { Path, G } from 'react-native-svg'
 
 export const Front = () => {
-  const { colors } = useTheme()
-
   return (
     <G transform={{ scale: 1, origin: 'center' }}>
       <Path

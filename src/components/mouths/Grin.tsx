@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Path, Line } from 'react-native-svg'
 
 export const Grin = () => {
-  const { colors } = useTheme()
-
   return (
     <>
       <Path

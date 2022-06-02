@@ -1,11 +1,9 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { BodyProps } from './types'
 import { Path, Line } from 'react-native-svg'
 
 export const Front = ({ clothingColor }: BodyProps) => {
-  const { colors } = useTheme()
-
   const { base } = colors.clothing[clothingColor]
 
   return (
@@ -42,9 +40,7 @@ export const Front = ({ clothingColor }: BodyProps) => {
   )
 }
 
-export const Back = ({ clothingColor, braStraps }: BodyProps) => {
-  const { skin, colors } = useTheme()
-
+export const Back = ({ clothingColor, braStraps, skinTone }: BodyProps) => {
   const { base, shadow } = colors.clothing[clothingColor]
 
   return (
@@ -56,17 +52,17 @@ export const Back = ({ clothingColor, braStraps }: BodyProps) => {
         strokeMiterlimit={10}
         strokeWidth="12px"
       />
-      <Path d="M371,847.39a69.68,69.68,0,0,1,15-19.67" fill={skin.base} />
+      <Path d="M371,847.39a69.68,69.68,0,0,1,15-19.67" fill={colors.skin[skinTone].base} />
       <Path
         d="M365.65,844.66a27,27,0,0,1,3.38-5.84,37.22,37.22,0,0,1,4.53-5c.84-.76,1.69-1.5,2.58-2.19a21.1,21.1,0,0,1,2.81-1.92,15,15,0,0,1,7-2,25,25,0,0,1-1.75,6.81c-.39,1-.83,1.88-1.29,2.77l-1.3,2.67c-.85,1.76-1.69,3.49-2.55,5.19a54.51,54.51,0,0,1-2.76,5Z"
         fill={colors.outline}
       />
-      <Path d="M489.33,838.82a69,69,0,0,1,12.74,40" fill={skin.base} />
+      <Path d="M489.33,838.82a69,69,0,0,1,12.74,40" fill={colors.skin[skinTone].base} />
       <Path
         d="M489.33,838.82a26.55,26.55,0,0,1,8.69,7.55,38.8,38.8,0,0,1,3.1,4.79c.93,1.67,1.77,3.39,2.55,5.15a55.12,55.12,0,0,1,3.46,11,48,48,0,0,1,.94,11.53h-12c-.19-3.25-.36-6.48-.7-9.73s-.77-6.48-1.4-9.74l-.5-2.44-.58-2.45c-.42-1.63-.87-3.26-1.29-4.93A104.17,104.17,0,0,1,489.33,838.82Z"
         fill={colors.outline}
       />
-      <Path d="M641.65,878.86a69.14,69.14,0,0,0-21.94-50.6" fill={skin.base} />
+      <Path d="M641.65,878.86a69.14,69.14,0,0,0-21.94-50.6" fill={colors.skin[skinTone].base} />
       <Path
         d="M635.65,878.86A107,107,0,0,0,634.39,866a81.92,81.92,0,0,0-3.12-12.67c-.34-1-.74-2.07-1.11-3.11s-.84-2.05-1.25-3.09-.94-2-1.38-3.05l-1.46-3c-2-4.1-4.17-8.19-6.36-12.75a35.76,35.76,0,0,1,12.22,8.61c.83.94,1.7,1.86,2.47,2.85s1.54,2,2.25,3,1.43,2.09,2.07,3.18,1.31,2.18,1.88,3.32A62.19,62.19,0,0,1,646,863.58a56.6,56.6,0,0,1,1.62,15.28Z"
         fill={colors.outline}
@@ -78,7 +74,7 @@ export const Back = ({ clothingColor, braStraps }: BodyProps) => {
         strokeMiterlimit={10}
         strokeWidth="12px"
       />
-      <Path d="M515.77,838.82a69,69,0,0,0-12.73,40" fill={skin.base} />
+      <Path d="M515.77,838.82a69,69,0,0,0-12.73,40" fill={colors.skin[skinTone].base} />
       <Path
         d="M515.77,838.82a104.17,104.17,0,0,1-2.27,10.75c-.42,1.67-.87,3.3-1.29,4.93l-.57,2.45-.5,2.44c-.63,3.26-1.09,6.5-1.41,9.74s-.5,6.48-.69,9.73H497a47,47,0,0,1,.94-11.53,54.48,54.48,0,0,1,3.46-11c.77-1.76,1.61-3.48,2.54-5.15a40,40,0,0,1,3.1-4.79A26.66,26.66,0,0,1,515.77,838.82Z"
         fill={colors.outline}

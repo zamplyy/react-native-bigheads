@@ -1,13 +1,12 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { ClothingProps } from './types'
 import { Noop } from '../../utils/Noop'
 import { Polygon } from 'react-native-svg'
 import { Path, Line, G, Polyline, Circle } from 'react-native-svg'
 
-export const DressShirt = ({ color, graphic: Graphic = Noop }: ClothingProps) => {
-  const { colors, skin } = useTheme()
-
+export const DressShirt = ({ color, graphic: Graphic = Noop, skinTone }: ClothingProps) => {
+  const skin = colors.skin[skinTone || 'light']
   const { base } = colors.clothing[color]
 
   return (

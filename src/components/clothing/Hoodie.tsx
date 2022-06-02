@@ -1,10 +1,10 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { ClothingProps } from './types'
 import { Path, G } from 'react-native-svg'
 
-export const Hoodie = ({ color }: ClothingProps) => {
-  const { colors, skin } = useTheme()
+export const Hoodie = ({ color, skinTone }: ClothingProps) => {
+  const skin = colors.skin[skinTone || 'light']
 
   const { base, shadow } = colors.clothing[color]
 

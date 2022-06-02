@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Line } from 'react-native-svg'
 
 export const SeriousMouth = () => {
-  const { colors } = useTheme()
-
   return (
     <Line
       x1="446.66"

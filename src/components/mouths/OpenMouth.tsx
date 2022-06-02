@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Path, Circle } from 'react-native-svg'
 
 export const OpenMouth = () => {
-  const { colors } = useTheme()
-
   return (
     <>
       <Circle cx="499.7" cy="642.93" r="53.95" fill={colors.outline} />

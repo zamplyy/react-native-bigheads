@@ -1,12 +1,10 @@
 import React from 'react'
 import { G, Path } from 'react-native-svg'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { LeftLash } from './Lashes'
 import { EyeProps } from './types'
 
 export const SimplePatch = ({ withLashes }: EyeProps) => {
-  const { colors } = useTheme()
-
   return (
     <G>
       <Path

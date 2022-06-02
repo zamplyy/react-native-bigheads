@@ -1,12 +1,13 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Noop } from '../../utils/Noop'
 import { Path } from 'react-native-svg'
+import { BodyProps } from './types'
 
 export const Front = Noop
 
-export const Back = () => {
-  const { skin, colors } = useTheme()
+export const Back = ({ skinTone }: BodyProps) => {
+  const skin = colors.skin[skinTone || 'light']
   return (
     <>
       <Path

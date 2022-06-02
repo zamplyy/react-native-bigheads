@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Path, Circle } from 'react-native-svg'
 
 export const SimpleEyes = () => {
-  const { colors } = useTheme()
-
   return (
     <>
       <Circle cx="341.06" cy="569.08" r="20.96" fill={colors.outline} />

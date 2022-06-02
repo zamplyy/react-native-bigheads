@@ -1,10 +1,8 @@
 import React from 'react'
 import { G, Path } from 'react-native-svg'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 
 export const FaceMask = () => {
-  const { colors } = useTheme()
-
   return (
     <G>
       <Path
@@ -22,3 +20,16 @@ export const FaceMask = () => {
     </G>
   )
 }
+
+// const xml = `
+//   <svg width="32" height="32" viewBox="0 0 32 32">
+//     <style>
+//       .red {
+//         fill: #ff0000;
+//       }
+//     </style>
+//     <rect class="red" x="0" y="0" width="32" height="32" />
+//   </svg>
+// `;
+
+// export default () => <SvgCss xml={xml} width="100%" height="100%" />;

@@ -1,11 +1,11 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { EyeProps } from './types'
 import { LeftLash } from './Lashes'
 import { Path, Circle, Line } from 'react-native-svg'
 
-export const WinkEyes = ({ withLashes }: EyeProps) => {
-  const { colors, skin } = useTheme()
+export const WinkEyes = ({ withLashes, skinTone }: EyeProps) => {
+  const skin = colors.skin[skinTone || 'light']
 
   return (
     <>

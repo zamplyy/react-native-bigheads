@@ -1,10 +1,9 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { FacialHairProps } from './types'
 import { Path, G } from 'react-native-svg'
 
 export const Goatee = ({ color }: FacialHairProps) => {
-  const { colors } = useTheme()
   const { base } = colors.hair[color]
 
   return (

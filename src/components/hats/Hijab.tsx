@@ -1,13 +1,11 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Noop } from '../../utils/Noop'
 import { Path, G } from 'react-native-svg'
 import { HatProps } from './types'
 import { ClothingProps } from '../clothing/types'
 
 export const Front = ({ color }: ClothingProps & HatProps) => {
-  const { colors } = useTheme()
-
   const { base } = colors.clothing[color]
 
   return (

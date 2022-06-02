@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { colors } from '../theme'
-import { ThemeContext } from '../themeContext'
 import { Noop } from '../utils/Noop'
 
 import { Base } from '../components/Base'
@@ -272,8 +271,6 @@ export const Avatar = ({
 
   ...rest
 }: AvatarProps) => {
-  const skin = colors.skin[skinTone]
-
   const Eyes = eyesMap[eyes]
   const Eyebrows = eyebrowsMap[eyebrows]
   const Mouth = mouthsMap[mouth]
@@ -287,32 +284,31 @@ export const Avatar = ({
   const BgShape = bgShapeMap[bgShape]
 
   return (
-    <ThemeContext.Provider value={{ colors, skin }}>
-      <Base
-        svgRef={svgRef}
-        eyes={Eyes}
-        eyebrows={Eyebrows}
-        mouth={Mouth}
-        hair={Hair}
-        facialHair={FacialHair}
-        clothing={Clothing}
-        accessory={Accessory}
-        graphic={Graphic}
-        hat={Hat}
-        body={Body}
-        hatColor={hatColor}
-        hairColor={hairColor}
-        clothingColor={clothingColor}
-        bgShape={BgShape}
-        bgColor={bgColor}
-        lipColor={lipColor}
-        showBackground={showBackground}
-        lashes={lashes}
-        size={size}
-        containerStyles={containerStyles}
-        containerProps={containerProps}
-        {...rest}
-      />
-    </ThemeContext.Provider>
+    <Base
+      svgRef={svgRef}
+      eyes={Eyes}
+      eyebrows={Eyebrows}
+      mouth={Mouth}
+      hair={Hair}
+      facialHair={FacialHair}
+      clothing={Clothing}
+      accessory={Accessory}
+      graphic={Graphic}
+      hat={Hat}
+      body={Body}
+      hatColor={hatColor}
+      hairColor={hairColor}
+      clothingColor={clothingColor}
+      bgShape={BgShape}
+      bgColor={bgColor}
+      lipColor={lipColor}
+      showBackground={showBackground}
+      lashes={lashes}
+      size={size}
+      containerStyles={containerStyles}
+      containerProps={containerProps}
+      skinTone={skinTone}
+      {...rest}
+    />
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { HairProps } from './types'
 import { Path, Circle } from 'react-native-svg'
 
@@ -7,8 +7,8 @@ export const Back = () => {
   return <></>
 }
 
-export const Front = ({ hairColor, hasHat = false }: HairProps) => {
-  const { colors, skin } = useTheme()
+export const Front = ({ hairColor, hasHat = false, skinTone }: HairProps) => {
+  const skin = colors.skin[skinTone || 'light']
 
   const { base, shadow } = colors.hair[hairColor]
 

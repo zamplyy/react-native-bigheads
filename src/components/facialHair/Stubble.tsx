@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { colors } from '../../theme'
 import { Path, Circle } from 'react-native-svg'
 
 export const StubbleBeard = () => {
-  const { colors } = useTheme()
-
   return (
     <>
       <Path

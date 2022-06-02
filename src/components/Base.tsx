@@ -1,6 +1,5 @@
 import React from 'react'
 import { colors } from '../theme'
-import { useTheme } from '../themeContext'
 import { Noop } from '../utils/Noop'
 import { FacialHairProps } from './facialHair/types'
 import { HairProps } from './hair/types'
@@ -49,6 +48,7 @@ interface BaseProps extends SvgProps {
   bgColor: keyof typeof colors.bgColors
   lipColor: keyof typeof colors.lipColors
   hatColor: keyof typeof colors.clothing
+  skinTone: keyof typeof colors.skin
 
   showBackground: boolean
   lashes: boolean
@@ -77,22 +77,21 @@ export const Base = ({
   bgColor,
   lipColor,
   hatColor,
-
+  skinTone,
   showBackground,
   lashes,
-  size = 100,
+  size = 50,
   containerStyles = {},
   containerProps = {},
   svgRef,
   ...rest
 }: BaseProps) => {
-  const { skin } = useTheme()
-
   const { Front: FrontHair, Back: BackHair, hatScale } = hair
   const { Front: FrontHat, Back: BackHat } = hat
   const { Front: FrontBody, Back: BackBody, hasBreasts } = body
   const { Front: ClothingFront, Back: ClothingBack, braStraps = true } = clothing
   const { Shape: BgShape, Mask: BgMask } = bgShape
+  const skin = colors.skin[skinTone]
 
   return (
     <View
@@ -100,9 +99,6 @@ export const Base = ({
         ...containerStyles,
         height: size,
         width: size,
-        // display: 'flex',
-        // justifyContent: 'center',
-        // alignItems: 'center'
       }}
       {...containerProps}
     >
@@ -189,17 +185,21 @@ export const Base = ({
             fill={colors.outline}
           />
 
-          <BackBody clothingColor={clothingColor} braStraps={braStraps} />
-          <ClothingBack color={clothingColor} graphic={Graphic} hasBreasts={hasBreasts} />
+          <BackBody clothingColor={clothingColor} braStraps={braStraps} skinTone={skinTone} />
+          <ClothingBack color={clothingColor} graphic={Graphic} hasBreasts={hasBreasts} skinTone={skinTone} />
           {!(ClothingFront === Noop && ClothingBack === Noop) && (
-            <FrontBody clothingColor={ClothingBack === DressShirt ? 'white' : clothingColor} braStraps={braStraps} />
+            <FrontBody
+              clothingColor={ClothingBack === DressShirt ? 'white' : clothingColor}
+              braStraps={braStraps}
+              skinTone={skinTone}
+            />
           )}
-          <ClothingFront color={clothingColor} graphic={Graphic} hasBreasts={hasBreasts} />
+          <ClothingFront color={clothingColor} graphic={Graphic} skinTone={skinTone} hasBreasts={hasBreasts} />
           <Eyebrows />
-          <Eyes withLashes={lashes} />
+          <Eyes withLashes={lashes} skinTone={skinTone} />
           <FacialHair color={hairColor} />
           <Mouth lipColor={lipColor} />
-          <FrontHair hairColor={hairColor} hasHat={FrontHat !== Noop} />
+          <FrontHair hairColor={hairColor} skinTone={skinTone} hasHat={FrontHat !== Noop} />
           <FrontHat color={hatColor} scale={hatScale} />
           <Accessory />
         </G>
